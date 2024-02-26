@@ -1,0 +1,15 @@
+To develop my assignment, I initially focused on the basic implementation of a proxy, i.e. being able to intercept
+the traffic without causing any disruption on the page visualization. The logic for the proxy can be found in the
+code comments. The idea is that, given the request, we extract the hostname and the port, that will be useful to
+send the packet to the actual server. We then receive the response(s), and we forward them to the user.
+Once I achieved that, I moved to the implementation of the passive mode. Here, I analyze the whole packet (both for
+requests and responses) with some regular expressions. My regular expressions probably don't cover all the possibilities,
+but I tried to include all the most common cases (credit cards with 16 digits, the 20 most famous US names, etc.).
+For the active mode, I get the packet and I inject a script, that performs the GET request to the proxy, in the head
+section. To achieve it, I modify both the body and Content-length (to avoid issues with the visualization of the page).
+Lastly, for the phishing part I check if the queried domain is in the list of monitored domain. If so, I'll craft
+a whole new packet, with the HTML code of my fake login page in the body.
+
+I used some online resources mainly to get a template for implementing a proxy in Python. In particular, I got
+inspired by the following repository: https://github.com/anapeksha/python-proxy-server/blob/main/src/server.py
+I took from that the low-level logic, adapting it to my requirements and optimizing it wherever possible.

@@ -1,0 +1,3 @@
+User agent: Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/119.0.0.0%20Safari/537.36
+Screen resolution: 1512x982
+Language: it-IT
